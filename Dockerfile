@@ -15,7 +15,7 @@ RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIV
 	  rm -rf /usr/local/activiti-${ACTIVITI_VERSION} /tmp/activiti.zip
 
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}.tar.gz -O /tmp/mysql-connector-java.tar.gz && \
-	  tar xzf /tmp/mysql-connector-java.tar.gz -d /tmp && \
+	  tar xzf /tmp/mysql-connector-java.tar.gz -C /tmp && \
 	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-rest/WEB-INF/lib/ && \
 	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-app/WEB-INF/lib/ && \
 	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-admin/WEB-INF/lib/ && \
