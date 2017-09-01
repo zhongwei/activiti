@@ -16,9 +16,9 @@ RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIV
 
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}.tar.gz -O /tmp/mysql-connector-java.tar.gz && \
 	  tar xzf /tmp/mysql-connector-java.tar.gz -C /tmp && \
-	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-rest/WEB-INF/lib/ && \
-	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-app/WEB-INF/lib/ && \
-	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/activiti-admin/WEB-INF/lib/ && \
+	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/rest/WEB-INF/lib/ && \
+	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/app/WEB-INF/lib/ && \
+	  cp /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}-bin.jar /usr/local/tomcat/webapps/admin/WEB-INF/lib/ && \
 	  rm -rf /tmp/mysql-connector-java.zip /tmp/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}
 
 WORKDIR $CATALINA_HOME
