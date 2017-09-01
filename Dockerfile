@@ -6,8 +6,8 @@ ENV MYSQL_CONNECTOR_JAVA_VERSION 5.1.44
 
 RUN apk --no-cache add openssl 
 
-RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-6.0.0/activiti-6.0.0.zip -O /tmp/activiti.zip && \
- 	  unzip /tmp/activiti.zip -d /usr/local/activiti && \
+RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIVITI_VERSION}/activiti-${ACTIVITI_VERSION}.zip -O /tmp/activiti.zip && \
+ 	  unzip /tmp/activiti.zip -d /usr/local && \
 	  unzip /usr/loal/activiti/activiti-${ACTIVITI_VERSION}/wars/activiti-explorer.war -d /usr/local/tomcat/webapps/activiti-explorer && \
 	  unzip /usr/local/activiti/activiti-${ACTIVITI_VERSION}/wars/activiti-rest.war -d /usr/local/tomcat/webapps/activiti-rest && \
 	  unzip /usr/local/activiti/activiti-${ACTIVITI_VERSION}/wars/activiti-admin.war -d /usr/local/tomcat/webapps/activiti-admin && \
