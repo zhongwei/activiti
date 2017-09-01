@@ -8,9 +8,9 @@ RUN apk --no-cache add openssl
 
 RUN wget https://github.com/Activiti/Activiti/releases/download/activiti-${ACTIVITI_VERSION}/activiti-${ACTIVITI_VERSION}.zip -O /tmp/activiti.zip && \
  	  unzip /tmp/activiti.zip -d /usr/local && \
-	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-app.war -d /usr/local/tomcat/webapps/activiti-app && \
-	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-rest.war -d /usr/local/tomcat/webapps/activiti-rest && \
-	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-admin.war -d /usr/local/tomcat/webapps/activiti-admin && \
+	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-app.war -d /usr/local/tomcat/webapps && \
+	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-rest.war -d /usr/local/tomcat/webapps && \
+	  unzip /usr/local/activiti-${ACTIVITI_VERSION}/wars/activiti-admin.war -d /usr/local/tomcat/webapps && \
 	  rm -rf /usr/local/activiti-${ACTIVITI_VERSION} /tmp/activiti.zip
 
 RUN wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MYSQL_CONNECTOR_JAVA_VERSION}.tar.gz -O /tmp/mysql-connector-java.tar.gz && \
